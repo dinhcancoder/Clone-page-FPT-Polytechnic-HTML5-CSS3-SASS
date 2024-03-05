@@ -1,0 +1,101 @@
+body {
+  font-family: $font;
+}
+
+.sidebar {
+  &-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      background-color: rgba(255, 166, 0, 0.45);
+      border-color: navajowhite;
+    }
+
+    &:hover .sidebar-title,
+    &:hover .sidebar-icons {
+      color: rgb(50, 50, 50);
+    }
+  }
+
+  &-title {
+    color: #222;
+    font-size: 1.65rem;
+    font-weight: 400;
+    transition: all .2s ease-in-out;
+  }
+
+  &-icons {
+    color: #666;
+    font-size: 2.5rem;
+    transition: all .2s ease-in-out;
+  }
+
+  &-titleLg {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-top: 105px;
+    margin-bottom: 25px;
+    letter-spacing: .8px;
+    border-bottom: 3px solid #222;
+  }
+
+  &-post {
+    display: flex;
+    gap: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 120px;
+      height: 85px;
+      object-fit: cover;
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-name {
+    font-size: 1.45rem;
+    color: #222;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      color: orangered;
+    }
+  }
+
+  &-date {
+    display: block;
+    color: #555;
+    margin-top: 2px;
+  }
+
+  &-video {
+    iframe {
+      width: 100%;
+      height: 172px;
+    }
+  }
+
+  &-banner {
+    margin-top: 10px;
+  }
+}

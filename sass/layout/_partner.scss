@@ -1,0 +1,22 @@
+.partner {
+  padding: 80px 0;
+
+  &-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+
+  &-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}

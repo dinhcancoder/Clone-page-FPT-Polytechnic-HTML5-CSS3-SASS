@@ -1,0 +1,289 @@
+.header {
+  color: $black;
+  background-image: url(../assets/image/banner.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: 606px;
+
+  &-top {
+    border-bottom: 1px solid rgba(168, 168, 168, 0.32);
+    padding: 12px 0;
+  }
+
+  &-information {
+    @include flex-spaceBetween;
+  }
+
+  &-language {
+    display: flex;
+    gap: 10px;
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-info {
+    display: flex;
+    gap: 20px;
+
+    a {
+      @include flex-align;
+      position: relative;
+      gap: 8px;
+      letter-spacing: .4px;
+      transition: all .2s ease-in-out;
+
+      ion-icon {
+        font-size: 1.72rem;
+      }
+
+      &:hover {
+        color: $orangered;
+      }
+    }
+  }
+
+  &-navbar {
+    @include flex-spaceBetween;
+    padding: 20.5px 0;
+  }
+
+  &-logo {
+    img {
+      width: 167px;
+    }
+  }
+
+  &-list {
+    @include flex-align;
+    gap: 22px;
+  }
+
+  &-items {
+    position: relative;
+
+    &:hover {
+      color: $orangered;
+    }
+  }
+
+  &-links {
+    @include flex-align;
+    gap: 15px;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    transition: all .2s ease-in-out;
+
+    span {
+      @include flex-align;
+      gap: 5px;
+    }
+  }
+
+  &-submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 150%;
+    width: 230px;
+    color: $black;
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 65%;
+      height: 20px;
+      background-color: transparent;
+      top: -20px;
+      cursor: pointer;
+    }
+
+    li {
+      position: relative;
+      transition: all .2s ease-in-out;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      &:hover {
+        color: $orangered;
+        background-color: rgb(250, 250, 250);
+      }
+    }
+
+    li a {
+      @include flex-spaceBetween;
+      padding: 12.5px;
+
+      ion-icon {
+        color: $text;
+      }
+    }
+  }
+
+  &-items:first-child &-submenu {
+    left: 25px;
+  }
+
+  &-items:hover &-submenu {
+    display: block;
+  }
+
+  &-submenu2 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 230px;
+    color: $black;
+    background-color: white;
+    border-left: 1px solid rgba(0, 0, 0, 0.015);
+  }
+
+  &-submenu li:hover &-submenu2 {
+    display: block;
+  }
+}
+
+.scrollSticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: black;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0 0 2.5px rgb(185, 185, 185);
+}
+
+.headerPage {
+  background-image: none;
+  height: auto;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  background-color: white;
+  color: black;
+}
+
+.headerPage .header-navbar {
+  padding: 12px 0;
+}
+
+.scrollSticky .header-navbar {
+  padding: 11px 0;
+}
+
+.search {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0, 0, 0, .85);
+  z-index: 999;
+  transform: scale(0);
+  transition: all .25s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form {
+  position: relative;
+  width: 80%;
+  height: 52px;
+  margin: 0 auto;
+
+  input {
+    position: absolute;
+    color: white;
+    font-size: 1.55rem;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: 1px solid rgb(111, 111, 111);
+    border-radius: 5px;
+    padding: 0 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    letter-spacing: .5px;
+
+    &:focus {
+      outline-color: rgba(0, 255, 251, 0.5);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  ion-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.75);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      color: white;
+      font-size: 2.2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.search-title {
+  color: white;
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+  letter-spacing: 1.2px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+
+  ion-icon {
+    color: white;
+    font-size: 2.8rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      color: orange;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.scroll {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: rgba(255, 68, 0, 0.75);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: scale(0);
+  transition: all .3s ease-in-out;
+  opacity: .65;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  img {
+    width: 25px;
+    filter: invert(1);
+  }
+}
+
+.onOffSeach {
+  transform: scale(1);
+}
+
+.up {
+  transform: scale(1);
+}
